@@ -8,7 +8,7 @@ int main(void)
   do {
     printf("Enter a height (1-23): \n");
     height = GetInt();
-  } while (height < 1 || height > 23);
+  } while (height < 0 || height > 23);
 
   if (height == 0) {
     return 0;
