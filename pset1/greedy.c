@@ -28,27 +28,23 @@ int main(void)
       number_of_coins += coins;
       number_of_cents = number_of_cents % 25;
     }
-
     while (number_of_cents >= 10)
     {
       int coins = number_of_cents / 10;
       number_of_coins += coins;
       number_of_cents = number_of_cents % 10;
     }
-
     while (number_of_cents >= 5)
     {
       int coins = number_of_cents / 5;
       number_of_coins += coins;
       number_of_cents = number_of_cents % 5;
     }
-
     while (number_of_cents >= 1)
     {
       number_of_coins += number_of_cents;
       number_of_cents = 0;
     }
-
     printf("%d\n", number_of_coins);
   }
   return 0;
