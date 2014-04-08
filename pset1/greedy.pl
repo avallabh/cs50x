@@ -18,26 +18,25 @@ sub main {
   }
   else {
     $change_in_cents = $change_due * 100;
-    $number_of_cents = $change_in_cents;
 
-    while ($number_of_cents >= 25) {
-      my $coins = POSIX::floor(($number_of_cents) / 25);
+    while ($change_in_cents >= 25) {
+      my $coins = POSIX::floor(($change_in_cents) / 25);
       $number_of_coins += $coins;
-      $number_of_cents = $number_of_cents % 25;
+      $change_in_cents = $change_in_cents % 25;
     }
-    while ($number_of_cents >= 10) {
-      my $coins = POSIX::floor(($number_of_cents) / 10);
+    while ($change_in_cents >= 10) {
+      my $coins = POSIX::floor(($change_in_cents) / 10);
       $number_of_coins += $coins;
-      $number_of_cents = $number_of_cents % 10;
+      $change_in_cents = $change_in_cents % 10;
     }
-    while ($number_of_cents >= 5) {
-      my $coins = POSIX::floor(($number_of_cents) / 5);
+    while ($change_in_cents >= 5) {
+      my $coins = POSIX::floor(($change_in_cents) / 5);
       $number_of_coins += $coins;
-      $number_of_cents = $number_of_cents % 5;
+      $change_in_cents = $change_in_cents % 5;
     }
-    while ($number_of_cents >= 1) {
-      $number_of_coins += $number_of_cents;
-      $number_of_cents = 0;
+    while ($change_in_cents >= 1) {
+      $number_of_coins += $change_in_cents;
+      $change_in_cents = 0;
     }
     print "$number_of_coins\n";
   }
